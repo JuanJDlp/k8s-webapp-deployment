@@ -7,13 +7,13 @@ variable "region" {
 variable "s3_name" {
   type        = string
   description = "The name of the s3 bucket to be created"
-  default     = "minombresuperonico-terraform-state"
+  default     = "tf-state-k8s-webapp-prod"
 }
 
 variable "table_name" {
   type        = string
   description = "The name of the DynamoDB table to be created"
-  default     = "tfstate-lock"
+  default     = "tf-lock-k8s-webapp"
 }
 
 variable "tags" {

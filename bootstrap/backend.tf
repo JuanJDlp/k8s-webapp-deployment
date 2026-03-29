@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-  bucket = "minombresuperonico-terraform-state"
+  bucket = "tf-state-k8s-webapp-prod"
   key = "backend-infra/terraform.tfstate"
   region = "us-east-1"
 }
