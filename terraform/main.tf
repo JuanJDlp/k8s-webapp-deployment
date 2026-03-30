@@ -26,6 +26,25 @@ module "eks" {
   ]
 }
 
+module "lbc" {
+  source = "./modules/lbc"
+
+  lbc_arn = module.auth.lbc_role_arn
+  region  = var.region
+  cluster_name = var.cluster_name
+  vpc_id = module.vpc.vpc_id
+
+  depends_on = [
+    module.eks
+  ]
+}
+
+module "auth" {
+  source = "./modules/auth"
+
+  cluster_name = var.cluster_name
+}
+
 module "vpc" {
   source = "./modules/vpc"
 
